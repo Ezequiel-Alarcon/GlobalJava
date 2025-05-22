@@ -3,7 +3,7 @@ package GlobalJava.Entities;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Localidad {
+public class Localidad extends Base{
     private String nombre;
 
     //unos a muchos
@@ -12,7 +12,8 @@ public class Localidad {
     public Localidad() {
     }
 
-    public Localidad(String nombre) {
+    public Localidad(long id, String nombre) {
+        super(id);
         this.nombre = nombre;
     }
 

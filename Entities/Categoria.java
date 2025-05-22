@@ -3,7 +3,7 @@ package GlobalJava.Entities;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Categoria {
+public class Categoria extends Base{
     private String denominacion;
 
     //??
@@ -16,7 +16,8 @@ public class Categoria {
     public Categoria() {
     }
 
-    public Categoria(String denominacion) {
+    public Categoria(long id, String denominacion) {
+        super(id);
         this.denominacion = denominacion;
     }
 
