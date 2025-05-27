@@ -21,13 +21,18 @@ public class Sucursal extends Base{
     private LocalTime horaApertura;
     private LocalTime horaCierre;
 
-    //muchos a unos
+    //una sucursal → una empresa
     private Empresa empresa;
 
-    //uno a uno
+    //una sucursal → un domicilio
     private Domicilio domicilio;
 
+    //una sucursal → muchas categorias
     private Set<Categoria> categorias = new HashSet<>();
-    //Falta vincular Promocion
 
+    //una sucursal → muchas promociones
+    private Set<Promocion> promociones = new HashSet<>();
+
+    // Una sucursal → Muchos pedidos
+    private Set<Pedido> pedidos = new HashSet<>();
 }

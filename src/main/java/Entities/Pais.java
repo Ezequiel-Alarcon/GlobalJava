@@ -18,6 +18,6 @@ import java.util.Set;
 public class Pais extends Base{
     private String nombre;
 
-    //Un pais puede tener muchas provincias
+    //un pais → muchas provincias
     private Set<Provincia> provincias = new HashSet<>();
 }

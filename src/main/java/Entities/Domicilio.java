@@ -6,6 +6,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -17,7 +20,15 @@ public class Domicilio extends Base {
     private Integer numero;
     private Integer cp;
 
-    private Localidad localidad;
-    //falta vincularlo con cliente y pedido
+    // Un domicilio → una sucursal
+    private Sucursal sucursal;
 
+    // Un domicilio → una localidad
+    private Localidad localidad;
+
+    // Un domicilio → muchos pedidos
+    private Set<Pedido> pedidos = new HashSet<>();
+
+    // Un domicilio → muchos clientes
+    private Set<Cliente> clientes = new HashSet<>();
 }

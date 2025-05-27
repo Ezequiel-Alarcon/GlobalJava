@@ -22,7 +22,7 @@ public class Provincia extends Base{
     // Uno a muchos: una provincia → muchas localidades
     private Set<Localidad> localidades = new HashSet<>();
 
-    // Una provincia tiene un pais
+    // una provincia → un pais
     private Pais pais;
 
 }

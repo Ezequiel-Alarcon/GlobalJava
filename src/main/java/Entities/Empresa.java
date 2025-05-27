@@ -20,6 +20,6 @@ public class Empresa extends Base{
     private String razonSocial;
     private Integer cuil;
 
-    //uno a muchos
+    //una empresa → muchas sucursales
     private Set<Sucursal> sucursales = new HashSet<>();
 }
