@@ -40,7 +40,7 @@ public class Pedido extends Base{
     // Un Pedido → Una factura
     private Factura factura;
 
-    // Un Pedido → Muchos DetallePedido (?
-    private Set<detallePedido> detallePedidos = new HashSet<>();
+    // Un Pedido → Muchos DetallePedido (inicializa en el constructor?)
+    private Set<DetallePedido> detallePedidos;
 
 }

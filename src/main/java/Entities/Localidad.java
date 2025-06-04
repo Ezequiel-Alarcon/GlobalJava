@@ -17,6 +17,8 @@ import java.util.Set;
 
 public class Localidad extends Base{
     private String nombre;
+
+    // una localidad → muchos domicilios
     private Set<Domicilio> domicilios = new HashSet<>();
 
     // Muchos a uno: muchas localidades → una provincia

@@ -12,9 +12,8 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @SuperBuilder
 
-public class ArticuloManufacturadoDetalle extends Base {
+public class ArticuloManufacturadoDetalle extends Base{
     private Integer cantidad;
-
 
     // Relación muchos a uno con ArticuloInsumo
     private ArticuloInsumo articuloInsumo;

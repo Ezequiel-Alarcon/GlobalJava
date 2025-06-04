@@ -1,5 +1,6 @@
 package Entities;
 
+import Entities.Protected.Articulo;
 import Enums.TipoPromocion;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -31,9 +32,9 @@ public class Promocion extends Base {
     //una Promocion → muchas sucursales
     private Set<Sucursal> sucursales = new HashSet<>();
 
-    //una Promocion → muchos articulos (?)
+    //una Promocion → muchos articulos
     private Set<Articulo> articulos = new HashSet<>();
 
-    //una Promocion → una imagen (?)
-    private Imagen imagen;
+    //una Promocion → muchas imagenes
+    private Set<Imagen> imagenes = new HashSet<>();
 }

@@ -7,18 +7,18 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
-import java.util.HashSet;
-import java.util.Set;
-
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
+public class DetallePedido extends Base {
+    private Integer cantidad;
+    private Double subTotal;
 
-public class UnidadMedida extends  Base{
-    private String denominacion;
+    // un detallePedido → un Pedido
+    private Pedido pedido;
 
-    // una unidad de medida → muchos artículos
-    private Set<Articulo> articulos = new HashSet<>();
+    // un detallePedido → un articulo
+    private Articulo articulo;
 }
