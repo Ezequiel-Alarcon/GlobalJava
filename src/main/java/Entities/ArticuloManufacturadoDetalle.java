@@ -12,7 +12,7 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @SuperBuilder
 
-public class ArticuloManufacturadoDetalle {
+public class ArticuloManufacturadoDetalle extends Base {
     private Integer cantidad;
 
 

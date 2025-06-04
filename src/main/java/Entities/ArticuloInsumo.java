@@ -12,7 +12,7 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @SuperBuilder
 
-public class AticuloInsumo extends Base {
+public class ArticuloInsumo extends Base {
     private double precioCompra;
     private Integer stockActual;
     private Integer stockMaximo;

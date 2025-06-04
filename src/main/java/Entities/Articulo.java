@@ -14,7 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 @SuperBuilder
 
-public class Articulo {
+public class Articulo extends Base {
     private String denominacion;
     private Double precioVenta;
 

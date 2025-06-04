@@ -14,7 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 @SuperBuilder
 
-public class ArticuloManufacturado {
+public class ArticuloManufacturado extends Base {
     private String descripcion;
     private Integer tiempoEstimadoMinutos;
     private String preparacion;
