@@ -8,7 +8,6 @@ import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -25,4 +24,10 @@ public class ArticuloManufacturado extends Articulo{
 
     // Uno a muchos: Un manufacturado tiene muchos detalles
     private Set<ArticuloManufacturadoDetalle> detalles = new HashSet<>();
+
+    public void agregarManufacturadoDetalle(ArticuloManufacturadoDetalle detalle) {
+        if (detalle != null) {
+            this.detalles.add(detalle);
+        }
+    }
 }
