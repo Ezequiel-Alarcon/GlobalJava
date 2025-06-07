@@ -25,4 +25,11 @@ public class Provincia extends Base{
     // una provincia → un pais
     private Pais pais;
 
+
+    //(?)
+    public void agregarLocalidad(Localidad localidad) {
+        if (localidad != null) {
+            this.localidades.add(localidad);
+        }
+    }
 }
