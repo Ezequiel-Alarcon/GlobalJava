@@ -43,4 +43,11 @@ public class Pedido extends Base{
     // Un Pedido → Muchos DetallePedido (inicializa en el constructor?)
     private Set<DetallePedido> detallePedidos;
 
+    //(?)
+    public void agregarDetallePedido(DetallePedido detallePedido){
+        if (detallePedido != null) {
+            detallePedidos.add(detallePedido);
+        }
+    }
+
 }
