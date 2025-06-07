@@ -22,4 +22,11 @@ public class Empresa extends Base{
 
     //una empresa → muchas sucursales
     private Set<Sucursal> sucursales = new HashSet<>();
+
+    //(?)
+    public void agregarSucursal(Sucursal sucursal) {
+        if (sucursal != null) {
+            this.sucursales.add(sucursal);
+        }
+    }
 }
