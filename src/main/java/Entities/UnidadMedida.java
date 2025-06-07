@@ -21,4 +21,11 @@ public class UnidadMedida extends  Base{
 
     // una unidad de medida → muchos artículos
     private Set<Articulo> articulos = new HashSet<>();
+
+    // (?)
+    public void agregarArticulo(Articulo articulo) {
+        if (articulo != null) {
+            this.articulos.add(articulo);
+        }
+    }
 }
