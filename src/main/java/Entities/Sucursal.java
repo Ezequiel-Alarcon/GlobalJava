@@ -35,4 +35,25 @@ public class Sucursal extends Base{
 
     // Una sucursal → Muchos pedidos
     private Set<Pedido> pedidos = new HashSet<>();
+
+    //(?)
+    public void agregarCategoria(Categoria categoria) {
+        if (categoria != null) {
+            categorias.add(categoria);
+        }
+    }
+
+    //(?)
+    public void agregarPromocion(Promocion promocion) {
+        if (promocion != null) {
+            promociones.add(promocion);
+        }
+    }
+
+    //(?)
+    public void agregarPedido(Pedido pedido) {
+        if (pedido != null) {
+            pedidos.add(pedido);
+        }
+    }
 }
