@@ -33,4 +33,18 @@ public class Cliente extends Base {
 
     // Un cliente → muchos pedidos
     private Set<Pedido> pedidos = new HashSet<>();
+
+    //(?)
+    public void agregarDomicilio(Domicilio domicilio) {
+        if (domicilio != null) {
+            domicilios.add(domicilio);
+        }
+    }
+
+    //(?)
+    public void agregarPedido(Pedido pedido) {
+        if (pedido != null) {
+            pedidos.add(pedido);
+        }
+    }
 }
