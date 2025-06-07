@@ -23,4 +23,11 @@ public class Localidad extends Base{
 
     // Muchos a uno: muchas localidades → una provincia
     private Provincia provincia;
+
+    //(?)
+    public void agregarDomicilio(Domicilio domicilio) {
+        if (domicilio != null) {
+            domicilios.add(domicilio);
+        }
+    }
 }
