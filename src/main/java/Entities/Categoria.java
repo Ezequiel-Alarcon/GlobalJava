@@ -7,6 +7,7 @@ import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
 import java.util.Set;
+import java.util.HashSet;
 
 @Getter
 @Setter
@@ -16,8 +17,25 @@ import java.util.Set;
 public class Categoria extends Base{
     private String denominacion;
 
-    private Set<Sucursal> sucursales;
+    //(?)
+    private Set<Sucursal> sucursales = new HashSet<>();
 
     private Categoria categoriaPadre;
-    private Set<Categoria> subCategorias;
+
+    //(?)
+    private Set<Categoria> subCategorias = new HashSet<>();
+
+    //(?)
+    public void agregarSucursal(Sucursal sucursal) {
+        if (sucursal != null) {
+            this.sucursales.add(sucursal);
+        }
+    }
+
+    //(?)
+    public void agregarSubCategoria(Categoria subCategoria) {
+        if (subCategoria != null) {
+            this.subCategorias.add(subCategoria);
+        }
+    }
 }
