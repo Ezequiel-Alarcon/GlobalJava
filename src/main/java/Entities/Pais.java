@@ -20,4 +20,11 @@ public class Pais extends Base{
 
     //un pais → muchas provincias
     private Set<Provincia> provincias = new HashSet<>();
+
+    //(?)
+    public void agregarProvincia(Provincia provincia) {
+        if (provincia != null) {
+            this.provincias.add(provincia);
+        }
+    }
 }
