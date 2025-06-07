@@ -16,7 +16,7 @@ import java.util.Set;
 @NoArgsConstructor
 @SuperBuilder
 
-public class Articulo extends Base {
+public abstract class Articulo extends Base {
     protected String denominacion;
     protected double precioVenta;
 
@@ -32,5 +32,27 @@ public class Articulo extends Base {
     // muchos artículos → muchas promociones
     private Set<Promocion> promociones = new HashSet<>();
 
+    // un artículos → muchos detallePedidos
+    private Set<DetallePedido> detallePedidos = new HashSet<>();
 
+    // (?)
+    public void agregarImagen(Imagen imagen){
+        if (imagenes != null) {
+            imagenes.add(imagen);
+        }
+    }
+
+    // (?)
+    public void agregarPromocion(Promocion promocion) {
+        if (promociones != null) {
+            promociones.add(promocion);
+        }
+    }
+
+    // (?)
+    public void agregarDetallePedido(DetallePedido detallePedido) {
+        if (detallePedidos != null) {
+            detallePedidos.add(detallePedido);
+        }
+    }
 }
