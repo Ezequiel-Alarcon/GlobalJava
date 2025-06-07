@@ -37,4 +37,25 @@ public class Promocion extends Base {
 
     //una Promocion → muchas imagenes
     private Set<Imagen> imagenes = new HashSet<>();
+
+    //(?)
+    public void agregarSucursal(Sucursal sucursal) {
+        if (sucursal != null) {
+            this.sucursales.add(sucursal);
+        }
+    }
+
+    //(?)
+    public void agregarArticulo(Articulo articulo) {
+        if (articulo != null) {
+            this.articulos.add(articulo);
+        }
+    }
+
+    //(?)
+    public void agregarImagen(Imagen imagen) {
+        if (imagen != null) {
+            this.imagenes.add(imagen);
+        }
+    }
 }
