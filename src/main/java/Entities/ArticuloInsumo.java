@@ -26,4 +26,8 @@ public class ArticuloInsumo extends Articulo {
     //Un ArticuloInsumo → muchos ArticuloManufacturadoDetalle
     private Set<ArticuloManufacturadoDetalle> articuloManufacturados = new HashSet<>();
 
+    //(?)
+    public void agregarArticuloManufacturadoDetalle(ArticuloManufacturadoDetalle detalle) {
+        this.articuloManufacturados.add(detalle);
+    }
 }
