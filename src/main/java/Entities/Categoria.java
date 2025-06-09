@@ -1,9 +1,6 @@
 package Entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import java.util.Set;
@@ -14,15 +11,18 @@ import java.util.HashSet;
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
+
 public class Categoria extends Base{
     private String denominacion;
 
     //(?)
+    @Builder.Default
     private Set<Sucursal> sucursales = new HashSet<>();
 
     private Categoria categoriaPadre;
 
     //(?)
+    @Builder.Default
     private Set<Categoria> subCategorias = new HashSet<>();
 
     //(?)
@@ -37,5 +37,15 @@ public class Categoria extends Base{
         if (subCategoria != null) {
             this.subCategorias.add(subCategoria);
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Categoria{" +
+                "denominacion='" + denominacion + '\'' +
+                ", sucursales=" + sucursales.size() +
+                ", categoriaPadreId=" + (categoriaPadre != null ? categoriaPadre.getId() : null) +
+                ", subCategorias=" + subCategorias.size() +
+                '}';
     }
 }

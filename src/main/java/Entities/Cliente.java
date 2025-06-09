@@ -1,9 +1,6 @@
 package Entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDate;
@@ -29,9 +26,11 @@ public class Cliente extends Base {
     private Imagen imagen;
 
     // Un cliente → muchos domicilios
+    @Builder.Default
     private Set<Domicilio> domicilios = new HashSet<>();
 
     // Un cliente → muchos pedidos
+    @Builder.Default
     private Set<Pedido> pedidos = new HashSet<>();
 
     //(?)
@@ -46,5 +45,20 @@ public class Cliente extends Base {
         if (pedido != null) {
             pedidos.add(pedido);
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", email='" + email + '\'' +
+                ", fechaNacimiento=" + fechaNacimiento +
+                ", usuarioId=" + (usuario != null ? usuario.getId() : null) +
+                ", imagenId=" + (imagen != null ? imagen.getId() : null) +
+                ", domicilios=" + domicilios.size() +
+                ", pedidos=" + pedidos.size() +
+                '}';
     }
 }

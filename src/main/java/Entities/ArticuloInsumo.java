@@ -1,10 +1,7 @@
 package Entities;
 
 import Entities.Protected.Articulo;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import java.util.HashSet;
@@ -24,10 +21,24 @@ public class ArticuloInsumo extends Articulo {
     private Boolean esParaElaborar;
 
     //Un ArticuloInsumo → muchos ArticuloManufacturadoDetalle
+    @Builder.Default
     private Set<ArticuloManufacturadoDetalle> articuloManufacturados = new HashSet<>();
 
     //(?)
     public void agregarArticuloManufacturadoDetalle(ArticuloManufacturadoDetalle detalle) {
         this.articuloManufacturados.add(detalle);
+    }
+
+    @Override
+    public String toString() {
+        return "ArticuloInsumo{" +
+                "precioCompra=" + precioCompra +
+                ", stockActual=" + stockActual +
+                ", stockMaximo=" + stockMaximo +
+                ", esParaElaborar=" + esParaElaborar +
+                ", articuloManufacturados=" + articuloManufacturados.size() +
+                ", precioVenta=" + precioVenta +
+                ", denominacion='" + denominacion + '\'' +
+                '}';
     }
 }

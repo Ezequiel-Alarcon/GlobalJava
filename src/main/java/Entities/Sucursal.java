@@ -1,9 +1,6 @@
 package Entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import java.time.LocalTime;
@@ -28,12 +25,15 @@ public class Sucursal extends Base{
     private Domicilio domicilio;
 
     //una sucursal → muchas categorias
+    @Builder.Default
     private Set<Categoria> categorias = new HashSet<>();
 
     //una sucursal → muchas promociones
+    @Builder.Default
     private Set<Promocion> promociones = new HashSet<>();
 
     // Una sucursal → Muchos pedidos
+    @Builder.Default
     private Set<Pedido> pedidos = new HashSet<>();
 
     //(?)
@@ -55,5 +55,19 @@ public class Sucursal extends Base{
         if (pedido != null) {
             pedidos.add(pedido);
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Sucursal{" +
+                "nombre='" + nombre + '\'' +
+                ", horaApertura=" + horaApertura +
+                ", horaCierre=" + horaCierre +
+                ", empresaId=" + (empresa != null ? empresa.getId() : null) +
+                ", domicilioId=" + (domicilio != null ? domicilio.getId() : null) +
+                ", categorias=" + categorias.size() +
+                ", promociones=" + promociones.size() +
+                ", pedidos=" + pedidos.size() +
+                '}';
     }
 }

@@ -1,10 +1,7 @@
 package Entities.Protected;
 
 import Entities.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import java.util.HashSet;
@@ -24,15 +21,18 @@ public abstract class Articulo extends Base {
     private Categoria categoria;
 
     // Uno a muchos con Imagen
+    @Builder.Default
     private Set<Imagen> imagenes = new HashSet<>();
 
     //muchos artículos → una unidad de medida
     private UnidadMedida unidadMedida;
 
     // muchos artículos → muchas promociones
+    @Builder.Default
     private Set<Promocion> promociones = new HashSet<>();
 
     // un artículos → muchos detallePedidos
+    @Builder.Default
     private Set<DetallePedido> detallePedidos = new HashSet<>();
 
     // (?)
@@ -54,5 +54,18 @@ public abstract class Articulo extends Base {
         if (detallePedidos != null) {
             detallePedidos.add(detallePedido);
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Articulo{" +
+                "denominacion='" + denominacion + '\'' +
+                ", precioVenta=" + precioVenta +
+                ", categoriaId=" + (categoria != null ? categoria.getId() : null) +
+                ", imagenes=" + imagenes.size() +
+                ", unidadMedidaId=" + (unidadMedida != null ? unidadMedida.getId() : null) +
+                ", promociones=" + promociones.size() +
+                ", detallePedidos=" + detallePedidos.size() +
+                '}';
     }
 }
