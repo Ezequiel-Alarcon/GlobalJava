@@ -20,4 +20,13 @@ public class ArticuloManufacturadoDetalle extends Base{
 
     // Relación muchos a uno con ArticuloManufacturado
     private ArticuloManufacturado articuloManufacturado;
+
+    @Override
+    public String toString() {
+        return "ArticuloManufacturadoDetalle{" +
+                "cantidad=" + cantidad +
+                ", articuloInsumoId=" + (articuloInsumo != null ? articuloInsumo.getId() : null) +
+                ", articuloManufacturadoId=" + (articuloManufacturado != null ? articuloManufacturado.getId() : null) +
+                '}';
+    }
 }

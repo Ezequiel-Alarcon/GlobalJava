@@ -14,6 +14,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
+
 public class Factura extends Base{
     private LocalDate fechaFacturacion;
     private Integer mpPaymentId;
@@ -25,4 +26,18 @@ public class Factura extends Base{
 
     // Una factura → Un pedido
     private Pedido pedido;
+
+    @Override
+    public String toString() {
+        return "Factura{" +
+                "fechaFacturacion=" + fechaFacturacion +
+                ", mpPaymentId=" + mpPaymentId +
+                ", mpMerchantOrderId=" + mpMerchantOrderId +
+                ", mpPreferenceId='" + mpPreferenceId + '\'' +
+                ", mpPaymentType='" + mpPaymentType + '\'' +
+                ", formaPago=" + formaPago +
+                ", totalVenta=" + totalVenta +
+                ", pedidoId=" + (pedido != null ? pedido.getId() : null) +
+                '}';
+    }
 }

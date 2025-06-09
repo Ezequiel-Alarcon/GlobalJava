@@ -24,4 +24,14 @@ public class Imagen extends Base{
 
     //muchas imágenes → promocion
     private Promocion promocion;
+
+    @Override
+    public String toString() {
+        return "Imagen{" +
+                "denominacion='" + denominacion + '\'' +
+                ", clienteId=" + (cliente != null ? cliente.getId() : null) +
+                ", articuloId=" + (articulo != null ? articulo.getId() : null) +
+                ", promocionId=" + (promocion != null ? promocion.getId() : null) +
+                '}';
+    }
 }

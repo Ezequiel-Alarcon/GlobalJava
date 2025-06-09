@@ -12,6 +12,7 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
+
 public class DetallePedido extends Base {
     private Integer cantidad;
     private Double subTotal;
@@ -21,4 +22,14 @@ public class DetallePedido extends Base {
 
     // un detallePedido → un articulo
     private Articulo articulo;
+
+    @Override
+    public String toString() {
+        return "DetallePedido{" +
+                "cantidad=" + cantidad +
+                ", subTotal=" + subTotal +
+                ", pedidoId=" + (pedido != null ? pedido.getId() : null) +
+                ", articuloId=" + (articulo != null ? articulo.getId() : null) +
+                '}';
+    }
 }
